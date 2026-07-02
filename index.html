@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Whale Transport | Premium Seafood Logistics & Freshness</title>
+    <!-- Meta tags for premium SEO -->
+    <meta name="description" content="Sea Whale Transport offers premium cold chain logistics and fresh seafood import-export. Experience Licious-style fresh catch delivered with Stripe-like smoothness.">
+    <meta name="keywords" content="sea whale transport, premium seafood, cold chain logistics, fresh fish, bulk seafood delivery">
+    
+    <!-- Google Fonts: Outfit & Inter for high-end luxury feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS stylesheet link -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Ocean Wave Overlay Background Layer -->
+    <div class="ocean-background">
+        <div class="bubble-container" id="bubble-container"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar-header glass">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" id="logo-link">
+                <img src="assets/logo.jpg" alt="Sea Whale Transport Logo" class="logo-img">
+                <span class="logo-text">SEA WHALE</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#offers" class="nav-link">Offers</a>
+                <a href="#pre-order" class="nav-link">Pre-Order</a>
+                <a href="#bulk-order" class="nav-link">Bulk Order</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="icon-btn search-trigger" id="search-trigger" aria-label="Search Products">
+                    <i data-lucide="search"></i>
+                </button>
+                <button class="icon-btn cart-trigger" id="cart-trigger" aria-label="Shopping Cart">
+                    <i data-lucide="shopping-bag"></i>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </button>
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Interactive Search Bar Drawer -->
+        <div class="search-drawer glass" id="search-drawer">
+            <div class="search-drawer-inner">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search premium catches... (e.g. Salmon, Lobster, Mutton)">
+                <button class="search-close" id="search-close"><i data-lucide="x"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Slide-out Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer glass" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Selection</h3>
+            <button class="close-cart-btn" id="close-cart-btn"><i data-lucide="x"></i></button>
+        </div>
+        
+        <div class="cart-body" id="cart-body">
+            <!-- Empty Cart State -->
+            <div class="empty-cart-state" id="empty-cart-state">
+                <div class="empty-cart-icon-wrapper">
+                    <i data-lucide="shopping-bag" class="empty-cart-icon"></i>
+                </div>
+                <p class="empty-title">Your cart is empty</p>
+                <p class="empty-desc">Choose from our premium deep-sea harvests and farm-fresh cuts.</p>
+                <button class="btn btn-primary shop-now-btn">Explore Seafood</button>
+            </div>
+            
+            <!-- Cart Items List (Dynamic) -->
+            <div class="cart-items" id="cart-items" style="display: none;"></div>
+        </div>
+        
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">₹0.00</span>
+                </div>
+                <div class="summary-row shipping-row">
+                    <span>Premium Cold-Chain Logistics</span>
+                    <span class="free-badge">FREE</span>
+                </div>
+            </div>
+            <div class="cart-actions-grid">
+                <button class="btn btn-secondary" id="clear-cart-btn">Clear</button>
+                <button class="btn btn-primary" id="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Page Content Container -->
+    <main class="page-container" id="page-container">
+
+        <!-- ================= HOME PAGE ================= -->
+        <section id="home" class="page-section active">
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <div class="hero-image-overlay" style="background-image: linear-gradient(rgba(11, 60, 109, 0.45), rgba(11, 60, 109, 0.85)), url('assets/hero_banner.png');"></div>
+                <div class="hero-content">
+                    <div class="hero-badge animate-fade-in"><i data-lucide="anchor"></i> Luxury Cold Chain Logistics & Catch</div>
+                    <h1 class="hero-title animate-slide-up">From the Cold Abyss <br>to Your Gourmet Table</h1>
+                    <p class="hero-desc animate-slide-up">Deep ocean fishing. High-tech cold chain logistics. Uncompromised freshness guaranteed within hours. Experience the Sea Whale standard.</p>
+                    <div class="hero-buttons animate-slide-up">
+                        <a href="#products" class="btn btn-primary btn-lg"><i data-lucide="shopping-bag"></i> Shop Fresh Catch</a>
+                        <a href="#pre-order" class="btn btn-outline btn-lg"><i data-lucide="calendar"></i> Pre-Order Harvests</a>
+                    </div>
+                </div>
+                <div class="hero-waves">
+                    <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                        <defs>
+                            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z" />
+                        </defs>
+                        <g class="parallax">
+                            <use href="#gentle-wave" x="48" y="0" fill="rgba(244, 250, 255, 0.7" />
+                            <use href="#gentle-wave" x="48" y="3" fill="rgba(244, 250, 255, 0.5)" />
+                            <use href="#gentle-wave" x="48" y="5" fill="rgba(244, 250, 255, 0.3)" />
+                            <use href="#gentle-wave" x="48" y="7" fill="#F4FAFF" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Featured Categories Section -->
+            <div class="home-categories container">
+                <div class="section-header">
+                    <span class="sub-title">Explore</span>
+                    <h2>Featured Categories</h2>
+                    <p>Handpicked selections of premium proteins, chilled and processed to maintain optimal freshness.</p>
+                </div>
+                <div class="categories-grid" id="home-categories-grid">
+                    <!-- Dynamic Categories will inject here -->
+                </div>
+                <div class="text-center mt-4">
+                    <a href="#categories" class="btn btn-outline">View All Categories <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Best Sellers & Fresh Catch Tabs -->
+            <div class="home-products bg-light-blue">
+                <div class="container">
+                    <div class="tabs-header">
+                        <div class="section-header text-left">
+                            <span class="sub-title">Curated Selection</span>
+                            <h2>Best Sellers & Fresh Catch</h2>
+                        </div>
+                        <div class="tabs-control glass">
+                            <button class="tab-btn active" data-tab="best-sellers">Best Sellers</button>
+                            <button class="tab-btn" data-tab="fresh-catch">Today's Fresh Catch</button>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content active" id="best-sellers">
+                        <div class="products-grid" id="home-bestsellers-grid">
+                            <!-- Dynamic Cards -->
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="fresh-catch">
+                        <div class="products-grid" id="home-freshcatch-grid">
+                            <!-- Dynamic Cards -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combo Offers Banner Section -->
+            <div class="home-combos container">
+                <div class="combo-banner-card glass">
+                    <div class="combo-details">
+                        <div class="freshness-badge bg-accent"><i data-lucide="percent"></i> Value Combo Pack</div>
+                        <h2>Premium Sea Feast Combo</h2>
+                        <p>Enjoy a luxurious assortment of Black Tiger Prawns, Atlantic Salmon portions, and premium Crab claws. Delivered in our specialized sub-zero packaging to guarantee sea-fresh flavor.</p>
+                        <div class="price-box">
+                            <span class="old-price">₹2,899</span>
+                            <span class="new-price">₹2,199</span>
+                            <span class="discount-badge">Save 24%</span>
+                        </div>
+                        <button class="btn btn-primary" id="home-combo-buy-btn">Order Feast Combo Now</button>
+                    </div>
+                    <div class="combo-image" style="background-image: url('assets/seafood_platter.png');"></div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="why-choose-us bg-deep-blue text-white">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <span class="sub-title color-accent">The Premium Difference</span>
+                        <h2 class="text-white">Why Choose Sea Whale Transport</h2>
+                        <p class="text-light">We redefine logistics and fresh deliveries through innovative engineering and strict temperature management.</p>
+                    </div>
+                    <div class="why-grid">
+                        <div class="why-card glass">
+                            <div class="why-icon"><i data-lucide="shield-check"></i></div>
+                            <h3>Unmatched Cold Chain</h3>
+                            <p>Constant -18°C monitoring from vessel freezer holds to our custom-cooled insulated home delivery pods.</p>
+                        </div>
+                        <div class="why-card glass">
+                            <div class="why-icon"><i data-lucide="compass"></i></div>
+                            <h3>Sustainably Harvested</h3>
+                            <p>Partnered with local artisanal fishers and certified sustainable deep-sea trawlers, respecting marine lifecycles.</p>
+                        </div>
+                        <div class="why-card glass">
+                            <div class="why-icon"><i data-lucide="zap"></i></div>
+                            <h3>Hyperlocal Fleet</h3>
+                            <p>Vessels dock, products are sorted at high speed, and dispatched via our custom logistics routes in record times.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delivery Process Flow -->
+            <div class="delivery-process container">
+                <div class="section-header text-center">
+                    <span class="sub-title">Operations</span>
+                    <h2>Our Cold Chain Logistics Process</h2>
+                    <p>A step-by-step trace of how we keep harvests fresh without ever breaking the freezing link.</p>
+                </div>
+                <div class="process-timeline">
+                    <div class="timeline-step">
+                        <div class="step-num">01</div>
+                        <h3>Deep Sea Catching</h3>
+                        <p>Caught and flash-frozen immediately on board at -30°C.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num">02</div>
+                        <h3>Smart Docking</h3>
+                        <p>Vessels unload directly into cold-insulated port sorting bays.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num">03</div>
+                        <h3>Whale Logistics</h3>
+                        <p>Sorted and dispatched in GPS-monitored refrigerated reefers.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num">04</div>
+                        <h3>Insulated Door Delivery</h3>
+                        <p>Delivered to your kitchen in custom nitrogen-cooled sub-zero pods.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials & Reviews -->
+            <div class="testimonials-section bg-light-blue">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <span class="sub-title">Reviews</span>
+                        <h2>Endorsed by Masterchefs & Epicures</h2>
+                        <p>Read experiences from leading culinary experts and domestic gourmet food lovers.</p>
+                    </div>
+                    <div class="testimonial-slider-container">
+                        <div class="testimonial-track" id="testimonial-track">
+                            <div class="testimonial-card glass active">
+                                <div class="rating-stars">
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                </div>
+                                <p class="quote">"The salmon we receive from Sea Whale Transport is indistinguishable from fresh catches on the Norwegian coastline. Their nitrogen packing is absolute culinary gold."</p>
+                                <div class="reviewer-meta">
+                                    <div class="reviewer-avatar">VR</div>
+                                    <div>
+                                        <h4>Chef Vikram Roy</h4>
+                                        <span>Executive Chef, The Blue Marine</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card glass">
+                                <div class="rating-stars">
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                </div>
+                                <p class="quote">"I order seafood for my family every Sunday. Sea Whale's delivery timing is accurate to the minute, and the prawns are always plump, sweet, and perfectly clean."</p>
+                                <div class="reviewer-meta">
+                                    <div class="reviewer-avatar">MS</div>
+                                    <div>
+                                        <h4>Malini Sen</h4>
+                                        <span>Home Epicure & Food Blogger</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card glass">
+                                <div class="rating-stars">
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                    <i data-lucide="star" class="fill-accent"></i>
+                                </div>
+                                <p class="quote">"Their wholesale logistics system has completely optimized our kitchen inventory. There is zero product waste due to spoiling. Truly premium cold chain."</p>
+                                <div class="reviewer-meta">
+                                    <div class="reviewer-avatar">AH</div>
+                                    <div>
+                                        <h4>Anirban Hazarika</h4>
+                                        <span>F&B Director, Luxury Resorts India</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-btn prev" id="prev-testi-btn"><i data-lucide="chevron-left"></i></button>
+                            <button class="slider-btn next" id="next-testi-btn"><i data-lucide="chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home FAQ Summary & Contact CTA -->
+            <div class="home-cta container">
+                <div class="cta-inner-card glass">
+                    <div class="cta-text">
+                        <h2>Ready to Experience Sea Whale Quality?</h2>
+                        <p>Enjoy free cold-chain shipping on your first purchase. Sample the premium fresh catch collections today.</p>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="#products" class="btn btn-primary btn-lg">Explore Catch</a>
+                        <a href="#faq" class="btn btn-outline btn-lg">Read FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PRODUCTS PAGE ================= -->
+        <section id="products" class="page-section">
+            <div class="container">
+                <div class="section-header text-left">
+                    <span class="sub-title">Storefront</span>
+                    <h2>Premium Seafood & Protein Harvests</h2>
+                    <p>Filter by category or search our live fresh catalog to add premium quality proteins to your cart.</p>
+                </div>
+                
+                <div class="products-container-layout">
+                    <!-- Filters Sidebar -->
+                    <aside class="products-sidebar glass">
+                        <h3>Filter By Categories</h3>
+                        <div class="category-filters-list" id="category-filters-list">
+                            <button class="filter-chip active" data-category="all">All Selections</button>
+                            <!-- Dynamic category filters will inject here -->
+                        </div>
+                        <div class="price-range-filter mt-4">
+                            <h3>Product Standard</h3>
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="freshness-guarantee" checked disabled>
+                                <span class="checkmark"></span>
+                                Freshness Insured (100%)
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="premium-cold" checked disabled>
+                                <span class="checkmark"></span>
+                                Sub-Zero Packaged
+                            </label>
+                        </div>
+                    </aside>
+                    
+                    <!-- Main Grid -->
+                    <div class="products-grid-wrapper">
+                        <div class="grid-controls">
+                            <span class="products-count" id="products-count">Showing all products</span>
+                            <div class="grid-sort">
+                                <span>Sort:</span>
+                                <select id="sort-select" class="glass">
+                                    <option value="default">Premium Priority</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="products-grid" id="storefront-products-grid">
+                            <!-- Dynamic Cards -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PRODUCT DETAILS PAGE ================= -->
+        <section id="product-details" class="page-section">
+            <div class="container">
+                <a href="#products" class="back-link"><i data-lucide="arrow-left"></i> Back to Storefront</a>
+                
+                <div class="product-detail-layout" id="product-details-content">
+                    <!-- Dynamic Injector for specific product details -->
+                </div>
+                
+                <div class="similar-products-wrapper mt-5">
+                    <div class="section-header text-left">
+                        <h3>Recommended Selections</h3>
+                        <p>Add these premium complimentary proteins to complete your recipes.</p>
+                    </div>
+                    <div class="products-grid" id="similar-products-grid">
+                        <!-- Dynamic Recommended Cards -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= CATEGORIES PAGE ================= -->
+        <section id="categories" class="page-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title">Department</span>
+                    <h2>Gourmet Categories</h2>
+                    <p>Click on any catalog below to view premium harvests specialized for that category.</p>
+                </div>
+                
+                <div class="categories-large-grid" id="categories-page-grid">
+                    <!-- Dynamic Categories Grid -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= OFFERS PAGE ================= -->
+        <section id="offers" class="page-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title">Discounts</span>
+                    <h2>Exclusive Wholesale & Combo Offers</h2>
+                    <p>Take advantage of limited-time values, seasonal catches, and family combo boxes.</p>
+                </div>
+                
+                <!-- Flash Sale Countdown -->
+                <div class="flash-sale-card glass">
+                    <div class="flash-sale-meta">
+                        <span class="badge bg-accent"><i data-lucide="flame"></i> FLASH HARVEST DEALS</span>
+                        <h2>Weekend Catch Discount</h2>
+                        <p>Get an extra 15% off Atlantic Cod and Red Snapper catches. Valid only until dock stocks last.</p>
+                        <div class="countdown-timer" id="countdown-timer">
+                            <div class="timer-box">
+                                <span class="timer-number" id="days">00</span>
+                                <span class="timer-label">Days</span>
+                            </div>
+                            <div class="timer-box">
+                                <span class="timer-number" id="hours">08</span>
+                                <span class="timer-label">Hrs</span>
+                            </div>
+                            <div class="timer-box">
+                                <span class="timer-number" id="minutes">42</span>
+                                <span class="timer-label">Mins</span>
+                            </div>
+                            <div class="timer-box">
+                                <span class="timer-number" id="seconds">19</span>
+                                <span class="timer-label">Secs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flash-sale-badge-big">15% OFF</div>
+                </div>
+                
+                <div class="offers-grid-wrapper mt-5">
+                    <h3>Gourmet Deal Cards</h3>
+                    <div class="offers-grid">
+                        <div class="offer-card glass">
+                            <div class="offer-icon"><i data-lucide="gift"></i></div>
+                            <h4>Weekend Salmon Deal</h4>
+                            <p>Buy 2 Atlantics Salmon portions (250g) and get a complimentary Sea Salt seasoning jar free.</p>
+                            <span class="offer-code">CODE: SALMONVAL</span>
+                        </div>
+                        <div class="offer-card glass">
+                            <div class="offer-icon"><i data-lucide="tag"></i></div>
+                            <h4>Seafood Combo Discount</h4>
+                            <p>Order any Combo Feasts worth over ₹3,000 and get ₹500 flat cashback added directly to your profile.</p>
+                            <span class="offer-code">CODE: SEASTAR500</span>
+                        </div>
+                        <div class="offer-card glass">
+                            <div class="offer-icon"><i data-lucide="refresh-cw"></i></div>
+                            <h4>Seasonal Mutton Harvests</h4>
+                            <p>Get up to 20% discount on orders of premium Lamb leg bones and chops during holidays.</p>
+                            <span class="offer-code">CODE: LAMLAG20</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PRE-ORDER PAGE ================= -->
+        <section id="pre-order" class="page-section">
+            <div class="container max-width-700">
+                <div class="section-header text-center">
+                    <span class="sub-title">Booking Form</span>
+                    <h2>Pre-Order Premium Sea Harvests</h2>
+                    <p>Request rare high-sea delicacies in advance. We secure the catch from vessels and deliver fresh on your preferred date.</p>
+                </div>
+                
+                <form class="booking-form glass" id="preorder-form">
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="po-name">Full Customer Name *</label>
+                            <input type="text" id="po-name" class="glass-input" required placeholder="e.g. Vipin Sharma">
+                        </div>
+                        <div class="form-group">
+                            <label for="po-phone">Mobile Number *</label>
+                            <input type="tel" id="po-phone" class="glass-input" required placeholder="e.g. +91 98765 43210">
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="po-product">Select Seafood / Protein *</label>
+                            <select id="po-product" class="glass-input" required>
+                                <option value="" disabled selected>Select Harvest type...</option>
+                                <option value="Atlantic Salmon Portions">Atlantic Salmon Fillet Portions</option>
+                                <option value="Mud Crabs (Live)">Gourmet Mud Crabs (Live/Frozen)</option>
+                                <option value="Jumbo Black Tiger Prawns">Jumbo Black Tiger Prawns</option>
+                                <option value="Premium Lobster Tail">Premium Rock Lobster Tails</option>
+                                <option value="Premium Lamb Chops">Premium Mutton Chops (Cold Chain)</option>
+                                <option value="Wagyu Ribeye Beef Steaks">Wagyu Beef Ribeye portions</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="po-qty">Quantity required (in Packs) *</label>
+                            <input type="number" id="po-qty" class="glass-input" required min="1" max="100" value="1">
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="po-date">Preferred Delivery Date *</label>
+                            <input type="date" id="po-date" class="glass-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="po-time">Preferred Delivery Hour *</label>
+                            <select id="po-time" class="glass-input" required>
+                                <option value="" disabled selected>Select delivery window...</option>
+                                <option value="Morning: 07:00 AM - 10:00 AM">Morning: 07:00 AM - 10:00 AM</option>
+                                <option value="Midday: 11:00 AM - 02:00 PM">Midday: 11:00 AM - 02:00 PM</option>
+                                <option value="Evening: 04:00 PM - 07:00 PM">Evening: 04:00 PM - 07:00 PM</option>
+                                <option value="Late Night: 08:00 PM - 10:00 PM">Late Night: 08:00 PM - 10:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="po-address">Delivery Address *</label>
+                        <textarea id="po-address" class="glass-input" rows="3" required placeholder="Specify your complete premium residential / commercial address..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="po-notes">Special Culinary Notes / Instructions</label>
+                        <textarea id="po-notes" class="glass-input" rows="2" placeholder="e.g. Cut into curry sizes, pack with dry ice, skinless fillet..."></textarea>
+                    </div>
+                    
+                    <div class="form-group terms-checkbox">
+                        <label class="checkbox-container">
+                            <input type="checkbox" required checked>
+                            <span class="checkmark"></span>
+                            I acknowledge that catches are subject to weather conditions and fishing yields. Sea Whale will coordinate scheduling updates.
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full-width mt-3">Submit Secure Pre-Order Request</button>
+                </form>
+            </div>
+        </section>
+
+
+        <!-- ================= BULK ORDER PAGE ================= -->
+        <section id="bulk-order" class="page-section">
+            <div class="container max-width-700">
+                <div class="section-header text-center">
+                    <span class="sub-title">Commercial Accounts</span>
+                    <h2>Wholesale & Bulk Volume Enquiries</h2>
+                    <p>Partner with Sea Whale Transport. We supply five-star hotels, premium restaurants, retail networks, and export orders with temperature-assured delivery.</p>
+                </div>
+                
+                <form class="booking-form glass" id="bulk-form">
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="bulk-business">Registered Business Name *</label>
+                            <input type="text" id="bulk-business" class="glass-input" required placeholder="e.g. Grand Marine Resorts Ltd">
+                        </div>
+                        <div class="form-group">
+                            <label for="bulk-person">Contact Person Name *</label>
+                            <input type="text" id="bulk-person" class="glass-input" required placeholder="e.g. Chef Sanjay Roy">
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="bulk-phone">Phone / WhatsApp Number *</label>
+                            <input type="tel" id="bulk-phone" class="glass-input" required placeholder="e.g. +91 99999 88888">
+                        </div>
+                        <div class="form-group">
+                            <label for="bulk-email">Corporate Email Address *</label>
+                            <input type="email" id="bulk-email" class="glass-input" required placeholder="e.g. sourcing@grandmarine.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="bulk-product">Protein Categories Required *</label>
+                            <select id="bulk-product" class="glass-input" required>
+                                <option value="" disabled selected>Select priority category...</option>
+                                <option value="Seafood & Shellfish (Bulk)">Seafood & Shellfish (Fresh/Frozen)</option>
+                                <option value="Meat & Poultry (Bulk)">Chicken, Mutton, and Beef (Wholesale)</option>
+                                <option value="Imported Frozen Foods (Bulk)">Imported Fine Frozen Seafood & Poultry</option>
+                                <option value="Custom Mixed Procurement (Bulk)">Custom Mixed Procurement Contracts</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bulk-qty">Estimated Monthly Volume (in Kgs) *</label>
+                            <input type="number" id="bulk-qty" class="glass-input" required min="50" placeholder="Minimum 50 Kg">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bulk-message">Logistics Requirements & Procurement Details *</label>
+                        <textarea id="bulk-message" class="glass-input" rows="4" required placeholder="Outline delivery frequencies, required temperature levels, slicing custom configurations, or export certifications..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full-width mt-3">Submit Corporate Sourcing Request</button>
+                </form>
+            </div>
+        </section>
+
+
+        <!-- ================= ABOUT US PAGE ================= -->
+        <section id="about" class="page-section">
+            <!-- Brand Story Grid -->
+            <div class="container">
+                <div class="about-grid-card glass">
+                    <div class="about-story-text">
+                        <span class="sub-title">Our Heritage</span>
+                        <h2>The Sea Whale Transport Narrative</h2>
+                        <p>Founded in 2018 with a vision to connect local sustainable fishing vessels to premium culinary markets, Sea Whale Transport has grown into India's leading specialized cold-chain logistics brand. We don't just ship food; we preserve the natural textures, rich oils, and absolute flavor profiles of deep sea catches.</p>
+                        <p>By blending IoT-monitored refrigerated trucks, nitrogen insulated shipping packs, and zero-chemical handling protocols, we create an unbroken bridge of cold trust from ocean tides directly to your gourmet creations.</p>
+                    </div>
+                    <div class="about-story-visual" style="background-image: url('assets/hero_banner.png');"></div>
+                </div>
+                
+                <!-- Mission & Vision Cards -->
+                <div class="mission-vision-grid mt-5">
+                    <div class="mv-card glass">
+                        <div class="mv-icon"><i data-lucide="compass"></i></div>
+                        <h3>Our Core Mission</h3>
+                        <p>To deliver absolute freshness and uncompromised food quality using advanced cold chain technology, while actively promoting eco-friendly, sustainable fishing practices across all maritime coordinates.</p>
+                    </div>
+                    <div class="mv-card glass">
+                        <div class="mv-icon"><i data-lucide="eye"></i></div>
+                        <h3>Our Global Vision</h3>
+                        <p>To set the global standard for marine protein transport, ensuring zero food spoilage and introducing premium sub-zero culinary experiences to epicures around the country.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Logistics Highlight -->
+            <div class="about-logistics-section bg-deep-blue text-white mt-5">
+                <div class="container">
+                    <div class="about-logistics-inner">
+                        <div class="logistics-text">
+                            <span class="sub-title color-accent">Cold Chain Infrastructure</span>
+                            <h2 class="text-white">Active Nitrogen Cooling & IoT Fleet Controls</h2>
+                            <p>Every transport reefer in our Sea Whale fleet is equipped with dual temperature sensors linked to a live cloud tracker. If temperatures deviate by even 0.5°C, our central operations center triggers an automated backup coolant override. Our custom Nitrogen insulated home delivery pods maintain an ice-cold lock without using melting water ice, ensuring your fish fillets remain dry, pristine, and perfectly chilled.</p>
+                            <ul class="logistics-specs-list">
+                                <li><i data-lucide="check-circle" class="color-accent"></i> Real-time GPS & Temperature Tracking</li>
+                                <li><i data-lucide="check-circle" class="color-accent"></i> Dry-Nitrogen Vapor Temperature Pods</li>
+                                <li><i data-lucide="check-circle" class="color-accent"></i> 100% Certified Chemical & Preservative Free</li>
+                            </ul>
+                        </div>
+                        <div class="logistics-img-wrapper">
+                            <img src="assets/logistics.png" alt="Sea Whale Cold Chain Transport Truck" class="logistics-showcase-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Guarantee Details -->
+            <div class="container mt-5">
+                <div class="guarantee-card glass">
+                    <div class="guarantee-header">
+                        <div class="guarantee-icon"><i data-lucide="award"></i></div>
+                        <h2>The Sea Whale Freshness Guarantee</h2>
+                    </div>
+                    <p>We are so confident in our cold-chain engineering that we offer a 100% Freshness Guarantee. If any catch delivered to your doorstep does not meet your expectations for color, smell, or texture, contact us within 2 hours of delivery and we will offer a replacement or credit with no questions asked.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= CONTACT US PAGE ================= -->
+        <section id="contact" class="page-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title">Get in Touch</span>
+                    <h2>Contact Our Sourcing & Support Hub</h2>
+                    <p>Have questions about delivery coverage, bulk pricing, or customized requests? We are here to assist.</p>
+                </div>
+                
+                <div class="contact-layout-grid">
+                    <!-- Details & Maps -->
+                    <div class="contact-details-box glass">
+                        <h3>Sea Whale Headquarters</h3>
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <p>Marine Boulevard Gate 04, Port Sourcing Yards, Visakhapatnam, AP, India</p>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <p>+91 (891) 456-7890 (Mon-Sat: 06:00 AM - 08:00 PM)</p>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="mail"></i>
+                            <p>support@seawhaletransport.com | sourcing@seawhaletransport.com</p>
+                        </div>
+                        
+                        <!-- WhatsApp Button -->
+                        <div class="whatsapp-box mt-4">
+                            <a href="https://wa.me/919999988888" target="_blank" class="btn btn-whatsapp">
+                                <i data-lucide="message-square"></i> Chat Live on WhatsApp
+                            </a>
+                            <p class="whatsapp-note">Average response time: &lt; 5 minutes during vessel docking hours.</p>
+                        </div>
+                        
+                        <!-- Google Map Placeholder -->
+                        <div class="map-placeholder mt-4">
+                            <div class="map-canvas">
+                                <i data-lucide="map" class="map-icon"></i>
+                                <span>Google Map Portal - Visakhapatnam Port Sourcing Zone</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="contact-form-box glass">
+                        <h3>Send a Direct Message</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="c-name">Your Full Name *</label>
+                                <input type="text" id="c-name" class="glass-input" required placeholder="e.g. Vipin Sharma">
+                            </div>
+                            <div class="form-group">
+                                <label for="c-email">Email Address *</label>
+                                <input type="email" id="c-email" class="glass-input" required placeholder="e.g. vipin@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="c-subject">Subject *</label>
+                                <select id="c-subject" class="glass-input" required>
+                                    <option value="" disabled selected>Select support subject...</option>
+                                    <option value="Sourcing / Delivery Check">Delivery Sourcing Check</option>
+                                    <option value="Product feedback">Product Quality Feedback</option>
+                                    <option value="Wholesale Partnerships">Wholesale Partnership Queries</option>
+                                    <option value="Others">General Enquiries</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-message">Your Message *</label>
+                                <textarea id="c-message" class="glass-input" rows="4" required placeholder="Write details of your support requests here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full-width">Submit Secure Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= FAQ PAGE ================= -->
+        <section id="faq" class="page-section">
+            <div class="container max-width-800">
+                <div class="section-header text-center">
+                    <span class="sub-title">Queries</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know about our sourcing yards, refrigeration systems, home delivery, and billing.</p>
+                </div>
+                
+                <div class="faq-accordion-group">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item glass">
+                        <button class="faq-question">
+                            <span>How does Sea Whale guarantee seafood freshness during home transit?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We use custom insulated Nitrogen-cooled pods for residential delivery. Unlike melting water ice which degrades fish scales and dilutes ocean salts, our vapor-based cooling system locks moisture, preserves fats, and keeps products at a precise 0-2°C dry chill until they reach your kitchen counter.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="faq-item glass">
+                        <button class="faq-question">
+                            <span>Are your proteins treated with any preservatives or water enhancers?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Never. Standard commercial seafood is often soaked in tripolyphosphate solutions to retain weight, which ruins the texture when cooked. Sea Whale maintains a strict 100% chemical-free pledge. What we catch, clean, and freeze is exactly what you cook—natural oils, clean textures, and raw seafood purity.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="faq-item glass">
+                        <button class="faq-question">
+                            <span>How fast do you dispatch seafood after the fishing vessel docks?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our dock sorting centers are located right next to the port harbor. Once vessels dock, our team sorts catches under cold conditions within 45 minutes, packing them into GPS-monitored refrigerated trucks. Residential orders are dispatched to local hubs for delivery in under 4 hours.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="faq-item glass">
+                        <button class="faq-question">
+                            <span>What are your minimum order requirements for Pre-Order and Bulk Order?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Pre-Order bookings have no minimum quantities and can be customized down to single portions of rare seafood (like Lobster or Black Cod). Bulk Sourcing accounts require a minimum monthly consumption of 50 Kg of product to qualify for custom wholesale pricing grids.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 5 -->
+                    <div class="faq-item glass">
+                        <button class="faq-question">
+                            <span>How do I modify my delivery dates or cancel an order?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Since catches are processed immediately to maintain freshness, delivery modifications can be made up to 24 hours before your scheduled delivery window by contacting support or initiating a chat on WhatsApp.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Global Floating Action Buttons -->
+    <div class="floating-actions">
+        <a href="https://wa.me/919999988888" target="_blank" class="floating-btn whatsapp" aria-label="Chat on WhatsApp">
+            <i data-lucide="message-square"></i>
+        </a>
+        <button class="floating-btn scroll-to-top" id="scroll-to-top-btn" aria-label="Scroll to Top">
+            <i data-lucide="chevron-up"></i>
+        </button>
+    </div>
+
+    <!-- Modals for form interactions & checkout -->
+    <div class="modal-overlay" id="global-modal-overlay"></div>
+    <div class="modal glass" id="global-modal">
+        <div class="modal-header">
+            <h3 id="modal-title">Success</h3>
+            <button class="close-modal-btn" id="close-modal-btn"><i data-lucide="x"></i></button>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <p>Your request has been successfully submitted.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" id="modal-confirm-btn">Close Window</button>
+        </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="main-footer">
+        <div class="footer-waves">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave-footer" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use href="#gentle-wave-footer" x="48" y="0" fill="rgba(11, 60, 109, 0.3)" />
+                    <use href="#gentle-wave-footer" x="48" y="3" fill="rgba(11, 60, 109, 0.2)" />
+                    <use href="#gentle-wave-footer" x="48" y="5" fill="rgba(11, 60, 109, 0.1)" />
+                    <use href="#gentle-wave-footer" x="48" y="7" fill="rgba(11, 60, 109, 1)" />
+                </g>
+            </svg>
+        </div>
+        
+        <div class="footer-content container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">
+                        <img src="assets/logo.jpg" alt="Sea Whale Transport Logo">
+                        <span>SEA WHALE</span>
+                    </div>
+                    <p class="footer-about-text">Premium cold-chain maritime logistics and gourmet protein distributions. Preserving natural sea taste since 2018.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Direct Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home Portal</a></li>
+                        <li><a href="#products">Premium Store</a></li>
+                        <li><a href="#categories">Food Categories</a></li>
+                        <li><a href="#offers">Special Deals</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Business Portal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#pre-order">Pre-Order Portal</a></li>
+                        <li><a href="#bulk-order">Bulk Procurement</a></li>
+                        <li><a href="#about">About Our Fleet</a></li>
+                        <li><a href="#faq">Corporate FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col newsletter-col">
+                    <h4>Sub-Zero Bulletin</h4>
+                    <p>Subscribe to receive notifications when rare catches (like Lobsters or King Crabs) dock at port sourcing hubs.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" class="glass-input" required placeholder="Enter corporate email...">
+                        <button type="submit" class="btn btn-primary icon-btn-only"><i data-lucide="send"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sea Whale Transport India. Developed as a Premium UI/UX Client Showcase. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Protocol</a>
+                    <a href="#">Cold Chain Certifications</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Logic Script -->
+    <script src="app.js"></script>
+</body>
+</html>
