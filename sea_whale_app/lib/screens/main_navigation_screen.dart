@@ -20,6 +20,7 @@ class MainNavigationScreen extends StatefulWidget {
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _currentIndex = 0;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   void _onTabSelected(int index) {
     setState(() => _currentIndex = index);
@@ -30,7 +31,10 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     final shop = Provider.of<ShopProvider>(context);
 
     final List<Widget> screens = [
-      HomeScreen(onNavigateTab: _onTabSelected),
+      HomeScreen(
+        onNavigateTab: _onTabSelected,
+        onOpenDrawer: () => _scaffoldKey.currentState?.openDrawer(),
+      ),
       const ProductsScreen(),
       const PreOrderScreen(),
       const TrackingScreen(),
@@ -38,6 +42,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     ];
 
     return Scaffold(
+      key: _scaffoldKey,
       drawer: Drawer(
         backgroundColor: AppTheme.darkBg,
         child: ListView(

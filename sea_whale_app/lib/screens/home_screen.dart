@@ -13,8 +13,13 @@ import 'supplier_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final Function(int) onNavigateTab;
+  final VoidCallback? onOpenDrawer;
 
-  const HomeScreen({super.key, required this.onNavigateTab});
+  const HomeScreen({
+    super.key,
+    required this.onNavigateTab,
+    this.onOpenDrawer,
+  });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -66,6 +71,11 @@ class _HomeScreenState extends State<HomeScreen> {
             pinned: false,
             backgroundColor: AppTheme.darkBg,
             elevation: 0,
+            leading: IconButton(
+              icon: const Icon(Icons.menu_rounded, color: AppTheme.oceanWhite),
+              tooltip: 'Menu',
+              onPressed: widget.onOpenDrawer,
+            ),
             title: Row(
               children: [
                 ClipRRect(
