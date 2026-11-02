@@ -8,6 +8,8 @@ import 'products_screen.dart';
 import 'pre_order_screen.dart';
 import 'tracking_screen.dart';
 import 'cart_screen.dart';
+import 'supplier_screen.dart';
+import 'bulk_order_screen.dart';
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
@@ -36,6 +38,137 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     ];
 
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: AppTheme.darkBg,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xFF0F2B48), Color(0xFF071B33)],
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      'assets/logo.jpg',
+                      width: 48,
+                      height: 48,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'SEA WHALE TRANSPORT',
+                    style: GoogleFonts.outfit(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w800,
+                      color: AppTheme.oceanWhite,
+                      letterSpacing: 0.8,
+                    ),
+                  ),
+                  Text(
+                    'Sub-Zero Cold Chain & Dock Logistics',
+                    style: GoogleFonts.inter(
+                      fontSize: 11,
+                      color: AppTheme.lightCyan,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home_rounded, color: AppTheme.accentCyan),
+              title: Text('Home',
+                  style: GoogleFonts.outfit(color: AppTheme.oceanWhite)),
+              onTap: () {
+                Navigator.pop(context);
+                _onTabSelected(0);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.storefront_rounded,
+                  color: AppTheme.accentCyan),
+              title: Text('Store & Fresh Dock',
+                  style: GoogleFonts.outfit(color: AppTheme.oceanWhite)),
+              onTap: () {
+                Navigator.pop(context);
+                _onTabSelected(1);
+              },
+            ),
+            ListTile(
+              leading:
+                  const Icon(Icons.anchor_rounded, color: AppTheme.accentCyan),
+              title: Text('Pre-Order Catch',
+                  style: GoogleFonts.outfit(color: AppTheme.oceanWhite)),
+              onTap: () {
+                Navigator.pop(context);
+                _onTabSelected(2);
+              },
+            ),
+            ListTile(
+              leading:
+                  const Icon(Icons.radar_rounded, color: AppTheme.accentCyan),
+              title: Text('Live Cold-Chain Tracker',
+                  style: GoogleFonts.outfit(color: AppTheme.oceanWhite)),
+              onTap: () {
+                Navigator.pop(context);
+                _onTabSelected(3);
+              },
+            ),
+            const Divider(color: AppTheme.borderLight),
+            ListTile(
+              leading: const Icon(Icons.sailing_rounded,
+                  color: AppTheme.accentCyan),
+              title: Text('Supplier & Dock Partner Portal',
+                  style: GoogleFonts.outfit(
+                      color: AppTheme.accentCyan, fontWeight: FontWeight.w700)),
+              subtitle: Text('Boat owners: Register catch & payouts',
+                  style: GoogleFonts.inter(
+                      color: AppTheme.textMuted, fontSize: 11)),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const SupplierScreen()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.business_center_rounded,
+                  color: AppTheme.goldAccent),
+              title: Text('B2B Bulk Wholesale',
+                  style: GoogleFonts.outfit(color: AppTheme.oceanWhite)),
+              subtitle: Text('Hotel & restaurant tonnage quotes',
+                  style: GoogleFonts.inter(
+                      color: AppTheme.textMuted, fontSize: 11)),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const BulkOrderScreen()),
+                );
+              },
+            ),
+            const Divider(color: AppTheme.borderLight),
+            ListTile(
+              leading: const Icon(Icons.support_agent_rounded,
+                  color: AppTheme.textMuted),
+              title: Text('24/7 Dock Cold-Chain Helpline',
+                  style: GoogleFonts.outfit(color: AppTheme.oceanWhite)),
+              subtitle: Text('+91 484 222 9988',
+                  style: GoogleFonts.inter(
+                      color: AppTheme.lightCyan, fontSize: 11)),
+              onTap: () => Navigator.pop(context),
+            ),
+          ],
+        ),
+      ),
       body: IndexedStack(
         index: _currentIndex,
         children: screens,

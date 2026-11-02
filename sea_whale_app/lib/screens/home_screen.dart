@@ -9,6 +9,7 @@ import 'cart_screen.dart';
 import 'pre_order_screen.dart';
 import 'bulk_order_screen.dart';
 import 'tracking_screen.dart';
+import 'supplier_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final Function(int) onNavigateTab;
@@ -108,6 +109,18 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             actions: [
+              IconButton(
+                icon: const Icon(Icons.sailing_rounded,
+                    color: AppTheme.accentCyan),
+                tooltip: 'Supplier Portal',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const SupplierScreen()),
+                  );
+                },
+              ),
               IconButton(
                 icon: const Icon(Icons.radar_rounded,
                     color: AppTheme.accentCyan),
@@ -591,6 +604,94 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ],
+                  ),
+                ),
+
+                const SizedBox(height: 14),
+
+                // Catch Supplier & Fisherman Portal Banner
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const SupplierScreen()),
+                      );
+                    },
+                    borderRadius: BorderRadius.circular(16),
+                    child: Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFF0F2B48), Color(0xFF071B33)],
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                            color: AppTheme.accentCyan.withAlpha(90)),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: AppTheme.accentCyan.withAlpha(35),
+                              shape: BoxShape.circle,
+                            ),
+                            child: const Icon(Icons.sailing_rounded,
+                                color: AppTheme.accentCyan, size: 24),
+                          ),
+                          const SizedBox(width: 14),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      'Catch Supplier & Dock Portal',
+                                      style: GoogleFonts.outfit(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w700,
+                                        color: AppTheme.oceanWhite,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 6),
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 6, vertical: 2),
+                                      decoration: BoxDecoration(
+                                        color: AppTheme.successGreen.withAlpha(30),
+                                        borderRadius: BorderRadius.circular(4),
+                                      ),
+                                      child: Text(
+                                        'PARTNER',
+                                        style: GoogleFonts.outfit(
+                                          fontSize: 9,
+                                          fontWeight: FontWeight.w800,
+                                          color: AppTheme.successGreen,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 3),
+                                Text(
+                                  'Fishermen & boat owners: List incoming catches for direct dock settlement.',
+                                  style: GoogleFonts.inter(
+                                    fontSize: 11,
+                                    color: AppTheme.textMuted,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const Icon(Icons.arrow_forward_ios_rounded,
+                              size: 14, color: AppTheme.accentCyan),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
 
